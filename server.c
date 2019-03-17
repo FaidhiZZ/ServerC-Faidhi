@@ -18,6 +18,10 @@ int main()
 	server_address.sin_port = htons(9002);
 	server_address.sin_addr.s_addr = INADDR_ANY;
 	
+	// Binding socket
+	bind(server_socket, (struct sockaddr*) &server_address, 
+sizeof(server_address));
+	
 	return 0;
 
 }
