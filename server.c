@@ -21,7 +21,16 @@ int main()
 	// Binding socket
 	bind(server_socket, (struct sockaddr*) &server_address, 
 sizeof(server_address));
+
+	listen(server_socket, 3);
+
+	int client_socket = accept(server_socket, NULL, NULL);
+	// Sends the message to client
+	send(client_socket, server_message, sizeof(server_message), 0);
 	
+	// Closes the socket
+	close(server_socket);	
+
 	return 0;
 
 }
