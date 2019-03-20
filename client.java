@@ -2,7 +2,6 @@ import java.io.*;
 import java.net.*;
 
 
-
 public class client {
 
 
@@ -44,11 +43,7 @@ public class client {
 
     } catch(Exception e) {
 
-
-
         e.printStackTrace();
 
-
     }
-
-   }
+}
