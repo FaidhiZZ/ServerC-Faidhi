@@ -22,13 +22,11 @@ int main()
 	int addrlen = sizeof(server_address);
 
 	// Binding socket
-	bind(server_socket, (struct sockaddr*) &server_address, 
-sizeof(server_address));
+	bind(server_socket, (struct sockaddr*) &server_address, sizeof(server_address));
 
 	listen(server_socket, 3);
 
-int client_socket = accept(server_socket, (struct sockaddr*)&server_address, 
-(socklen_t*)&addrlen);
+	int client_socket = accept(server_socket, (struct sockaddr*)&server_address,(socklen_t*)&addrlen);
 
 	int valread = read(client_socket, buffer, 1024);
 	
